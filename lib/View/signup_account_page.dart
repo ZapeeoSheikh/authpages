@@ -14,6 +14,7 @@ class SignUpAccount extends StatefulWidget {
 class _SignUpAccountState extends State<SignUpAccount> {
   @override
   bool showPassword = false;
+  bool showPassword2 = false;
 
   Widget build(BuildContext context) {
     final _controller = TextEditingController();
@@ -70,7 +71,6 @@ class _SignUpAccountState extends State<SignUpAccount> {
                     style: TextStyle(
                       color: Colors.black.withOpacity(0.6),
                     ),
-                    obscureText: showPassword ? true : false,
                     decoration: InputDecoration(
                       hintText: 'Email Address',
                       hintStyle:
@@ -111,6 +111,7 @@ class _SignUpAccountState extends State<SignUpAccount> {
                   height: 50,
                   child: TextFormField(
                     controller: _controller1,
+                    obscureText: showPassword ? true : false,
                     cursorColor: MyColors.mainColor1,
                     cursorHeight: 20,
                     style: TextStyle(
@@ -171,7 +172,7 @@ class _SignUpAccountState extends State<SignUpAccount> {
                     controller: _controller2,
                     cursorColor: MyColors.mainColor1,
                     cursorHeight: 20,
-                    obscureText: showPassword ? true : false,
+                    obscureText: showPassword2 ? true : false,
                     style: TextStyle(
                       color: Colors.black.withOpacity(0.6),
                     ),
@@ -205,11 +206,11 @@ class _SignUpAccountState extends State<SignUpAccount> {
                       suffixIcon: GestureDetector(
                         onTap: (){
                           setState(() {
-                            showPassword = !showPassword;
+                            showPassword2 = !showPassword2;
                           });
                         },
                         child: Icon(
-                          showPassword ? CupertinoIcons.eye_slash_fill : Icons.remove_red_eye_rounded,
+                          showPassword2 ? CupertinoIcons.eye_slash_fill : Icons.remove_red_eye_rounded,
                           color: MyColors.textColor.withOpacity(0.8),
                         ),
                       ),
